@@ -55,7 +55,7 @@ export default async function ProductDetail({ id }: { id: string }) {
   }
 
   const mainImage =
-    product.images?.find((image) => image.isMain) ??
+    product.images?.find((image: any) => image.isMain) ??
     product.images?.[0];
 
   const gallery = product.images?.length
@@ -116,7 +116,7 @@ export default async function ProductDetail({ id }: { id: string }) {
 
             {gallery.length > 1 && (
               <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
-                {gallery.map((image) => (
+                {gallery.map((image: any) => (
                   <div
                     key={image.id}
                     className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-xl border bg-white p-2 ${image.id === mainImage?.id
