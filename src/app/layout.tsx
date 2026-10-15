@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://dealport-web-4z5b.vercel.app/",
     images: [
       {
-        url: "/img/Dealport_%20TexnologiyaBittaJoyda.png",
+        url: "/img/Dealport_TexnologiyaBittaJoyda.png",
         width: 1200,
         height: 630,
         alt: "Dealper - Your one-stop shop for the best deals and discounts on a wide range of products. Find the latest offers and save big on your favorite items.",
