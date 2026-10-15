@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function LimitedTimeDeal() {
-    const scrollRef = useRef(null);
+    const scrollRef:any = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const totalCards = 7; // Kartalarning jami soni
     const cardsPerView = 4; // Ekranda ko'rinadigan kartalar soni
@@ -22,7 +22,7 @@ export default function LimitedTimeDeal() {
         }
     };
     // Nuqtani bosganda o'sha qismga o'tish
-    const scrollToPage = (index) => {
+    const scrollToPage = (index:any) => {
         if (scrollRef.current) {
             const { scrollWidth, clientWidth } = scrollRef.current;
             const maxScroll = scrollWidth - clientWidth;
@@ -31,7 +31,7 @@ export default function LimitedTimeDeal() {
         }
     };
     // Chap va o'ng tugmalar bosilganda surish
-    const scrollByDirection = (direction) => {
+    const scrollByDirection = (direction:any) => {
         if (scrollRef.current) {
             const { clientWidth } = scrollRef.current;
             const scrollAmount = clientWidth * 0.75; // Bir martada qancha surilishi
@@ -43,7 +43,7 @@ export default function LimitedTimeDeal() {
     };
 
     return (
-        <div className='max-w-[1240px] w-full mx-auto flex flex-col justify-center gap-8 pb-[100px]'>
+        <div className='max-w-310 w-full mx-auto flex flex-col justify-center gap-8 pb-25'>
             {/* Sarlavha, Chap/O'ng tugmalar va View All */}
             <div className='flex items-center justify-between px-4'>
                 <p className='font-bold text-[32px]'>Limited-Time Deal</p>
@@ -75,7 +75,7 @@ export default function LimitedTimeDeal() {
                         className='flex items-center gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-4'
                     >
                         {[...Array(totalCards)].map((_, i) => (
-                            <div key={i} className='bg-[#ccc] rounded-2xl w-[272px] h-[400px] shrink-0'></div>
+                            <div key={i} className='bg-[#ccc] rounded-2xl w-68 h-100 shrink-0'></div>
                         ))}
                     </div>
 

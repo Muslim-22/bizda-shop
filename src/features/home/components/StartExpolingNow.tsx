@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function StartExpolingNow() {
-    const scrollRef = useRef(null);
+    const scrollRef:any = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const totalCards = 12; // Kartalarning jami soni
     const cardsPerView = 5; // Taxminan ko'rinadigan kartalar
@@ -23,7 +23,7 @@ export default function StartExpolingNow() {
     };
 
     // Nuqtani bosganda o'sha qismga o'tish
-    const scrollToPage = (index) => {
+    const scrollToPage = (index:any) => {
         if (scrollRef.current) {
             const { scrollWidth, clientWidth } = scrollRef.current;
             const maxScroll = scrollWidth - clientWidth;
@@ -33,7 +33,7 @@ export default function StartExpolingNow() {
     };
 
     // Chap va o'ng tugmalar bosilganda surish
-    const scrollByDirection = (direction) => {
+    const scrollByDirection = (direction:any) => {
         if (scrollRef.current) {
             const { clientWidth } = scrollRef.current;
             const scrollAmount = clientWidth * 0.75;
@@ -45,7 +45,7 @@ export default function StartExpolingNow() {
     };
 
     return (
-        <div className='max-w-[1240px] w-full mx-auto flex flex-col justify-center gap-8 pb-[100px]'>
+        <div className='max-w-310 w-full mx-auto flex flex-col justify-center gap-8 pb-25'>
             {/* Sarlavha va View All tugmasi */}
             <div className='flex items-center justify-between px-4'>
                 <p className='font-bold text-[32px]'>Start exploring now</p>
@@ -73,7 +73,7 @@ export default function StartExpolingNow() {
                         className='flex items-center gap-8 overflow-x-auto scroll-smooth no-scrollbar w-full py-2'
                     >
                         {[...Array(totalCards)].map((_, i) => (
-                            <div key={i} className='bg-[#ccc] rounded-2xl w-[180px] h-[220px] shrink-0'></div>
+                            <div key={i} className='bg-[#ccc] rounded-2xl w-45 h-55 shrink-0'></div>
                         ))}
                     </div>
 

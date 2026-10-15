@@ -10,13 +10,13 @@ export default function TrendingProducts() {
                 </button>
             </div>
             <div className='flex items-center justify-between gap-8'>
-                <div className='bg-[#ccc] rounded-2xl w-[270px] h-[400px]'>
+                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
                 </div>
-                <div className='bg-[#ccc] rounded-2xl w-[270px] h-[400px]'>
+                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
                 </div>
-                <div className='bg-[#ccc] rounded-2xl w-[270px] h-[400px]'>
+                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
                 </div>
-                <div className='bg-[#ccc] rounded-2xl w-[270px] h-[400px]'>
+                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
                 </div>
             </div>
         </div>
