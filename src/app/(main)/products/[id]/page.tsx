@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
           {
             url: imageUrl,
             alt: product.name,
-            width: 300,
-            height: 300,
+            width: 500,
+            height: 500,
           },
         ]
         : [],
