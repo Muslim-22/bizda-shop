@@ -8,9 +8,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const product = await getProduct(id);
 
   const imageUrl = product.images?.[0]?.url;
-  console.log(imageUrl)
   return {
-    title: product.name,
+
+    title: {
+      default: product.name,
+      template: "%s | Dealper",
+    },
     description: product.description,
 
     openGraph: {
@@ -24,12 +27,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
           {
             url: imageUrl,
             alt: product.name,
-            width: 1200,
-            height: 630,
+            width: 300,
+            height: 300,
           },
         ]
         : [],
+        locale: "uz_UZ"
     },
+    twitter: {
+      card: "summary",
+      title: product.name,
+      description: product.description,
+    }
   };
 }
 
