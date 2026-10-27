@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import Link from "next/link";
 import type { ProductType } from "../features/categories/types/products";
 
@@ -10,27 +11,24 @@ function formatPrice(price: number) {
   return new Intl.NumberFormat("uz-UZ").format(price) + " so'm";
 }
 
-export default function ProductCard({
-  product,
-}: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const mainImage =
     product.images?.find((image) => image.isMain) ??
     product.images?.[0];
 
+  const productHref = `/products/${product.category?.slug ?? ""}/${product.id}`;
+
   return (
-    <article
-      className="group overflow-hidden rounded-2xl border border-gray-100 bg-white transition duration-300 hover:-translate-y-1 hover:border-green-100 hover:shadow-sm hover:shadow-gray-200/60"
-    >
+    <article className="group overflow-hidden rounded-2xl border border-gray-100 bg-white transition duration-300 hover:-translate-y-1 hover:border-green-100 hover:shadow-sm hover:shadow-gray-200/60">
       {/* Image */}
-      <Link
-        href={`/products/${product?.category?.slug}/${product.id}`}
-        className="relative block overflow-hidden"
-      >
+      <Link href={productHref} className="relative block overflow-hidden">
         <div className="flex aspect-square items-center justify-center p-4">
           {mainImage?.url ? (
-            <img
+            <Image
               src={mainImage.url}
               alt={mainImage.alt || product.name}
+              width={400}
+              height={400}
               className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
             />
           ) : (
@@ -64,7 +62,7 @@ export default function ProductCard({
           {product.category?.name || "Boshqa"}
         </p>
 
-        <Link href={`/products/${product.slug}`}>
+        <Link href={productHref}>
           <h2 className="min-h-10 line-clamp-2 text-sm font-semibold leading-5 text-gray-800 transition hover:text-[#399765] sm:text-base">
             {product.name}
           </h2>
@@ -99,10 +97,10 @@ export default function ProductCard({
 
         {/* Details */}
         <Link
-          href={`/products/${product?.category?.slug}/${product.id}`}
+          href={productHref}
           className="mt-4 flex w-full items-center justify-center rounded-xl bg-[#edf8ee] px-3 py-3 text-sm font-semibold text-[#399765] transition hover:bg-[#4caf7d] hover:text-white"
         >
-          Mahsulotni ko'rish
+         Mahsulotni ko&apos;rish
         </Link>
       </div>
     </article>
