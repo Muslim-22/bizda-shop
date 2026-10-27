@@ -1,6 +1,10 @@
 import React from 'react'
+import { ProductType } from '../../categories/types/products'
+import ProductCard from '@/src/components/Card'
+import { getBestSelling } from '@/src/services/getBestSelling'
 
-export default function BestSelling() {
+export default async function BestSelling() {
+    const data = await getBestSelling()
     return (
         <div className='max-w-310 w-full m-[0px_auto] flex flex-col justify-center gap-8 p-[0px_0px_100px]'>
             <div className='flex items-center justify-between'>
@@ -9,15 +13,10 @@ export default function BestSelling() {
                     View All
                 </button>
             </div>
-            <div className='flex items-center justify-between gap-8'>
-                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
-                </div>
-                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
-                </div>
-                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
-                </div>
-                <div className='bg-[#ccc] rounded-2xl w-67.5 h-100'>
-                </div>
+            <div className='grid  grid-cols-4 gap-8'>
+                {
+                    data?.map((item: ProductType) => <ProductCard key={item?.id} product={item} />)
+                }
             </div>
         </div>
     )

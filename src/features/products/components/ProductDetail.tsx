@@ -68,7 +68,7 @@ export default async function ProductDetail({ id }: { id: string }) {
     <main className="min-h-screen bg-[#fafafa]">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        {/* <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-[#399765]">
             Bosh sahifa
           </Link>
@@ -80,7 +80,7 @@ export default async function ProductDetail({ id }: { id: string }) {
           <span className="max-w-56 truncate text-gray-900">
             {product.name}
           </span>
-        </nav>
+        </nav> */}
 
         {/* Product section */}
         <section className="grid gap-8 lg:grid-cols-2 lg:gap-12">
